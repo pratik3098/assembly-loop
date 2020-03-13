@@ -17,14 +17,13 @@ contract("BitWise", () =>{
         const gas = await bitwise.countBitSet.estimateGas(myNumber);
         const gasAsm = await bitwise.countBitSetAsm.estimateGas(myNumber);
         expect(gas).to.be.gt(gasAsm, "Assembly should be more gas efficient");
-
         const result = await bitwise.countBitSet(myNumber);
         const resultAsm = await bitwise.countBitSetAsm(myNumber);
         expect(result).to.be.a.bignumber.that.equal(resultAsm, "result should match");
     })
 
     it('countBitSetAsm(0)', async ()=>{
-        const result = await bitwise.countBitSetAsm(0);
+        const result = await bitwise.countBitSetAsm(8);
        assert(result,0, "result should match");
     })
 }) 
