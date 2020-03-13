@@ -23,7 +23,7 @@ contract("BitWise", () =>{
     })
 
     it('countBitSetAsm(0)', async ()=>{
-        const result = await bitwise.countBitSetAsm(8);
+        const result = await bitwise.countBitSetAsm(0);
        assert(result,0, "result should match");
     })
 }) 
